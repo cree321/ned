@@ -6,9 +6,9 @@ var enviaMensaje = function(e) {
 };
 
 let escena;
-document.addEventListener("DOMContentLoaded", (e) => {
+window.addEventListener("DOMContentLoaded", (e) => {
   escena = document.getElementById("escena");
-  window.addEventListener("keydown", enviaMensaje);
+  document.addEventListener("keydown", enviaMensaje);
   //window.addEventListener("keyup", enviaMensaje);
 });
 reproduccion.onmessage = function(e) {
