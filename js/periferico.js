@@ -27,7 +27,7 @@ onmessage = function(e) {
 
 
   rotation.forEach(value, i => value += deltaRotation[i]);
-  deltaRotation = [0,0,0];
+  deltaRotation = [0,0];
 
   return `rotateX(${rotation[0]}deg) rotateY(rotation[1]deg)`;
 }
