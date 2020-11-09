@@ -3,10 +3,10 @@
 var renderDelegate = new Worker("js/renderDelegate.js");
 
 window.addEventListener("keydown", function(e) {
-  renderDelegate.postMessage(e.code);
+  renderDelegate.postMessage(e.key);
 });
 window.addEventListener("keyup",function(e) {
-  renderDelegate.postMessage(e.code);
+  renderDelegate.postMessage(e.key);
 });
 renderDelegate.onmessage = (e) => {
   console.log("Response: "+e);
