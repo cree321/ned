@@ -1,19 +1,31 @@
-const reproduccion = new Worker("js/periferico.js");
+"use strict";
+/*\\ Asynchronous Code \\*/
+var renderDelegate = new Worker("renderDelegate.js");
 
-var enviaMensaje = function(e) {
-  var obj = JSON.parse(JSON.stringify(e));
-  reproduccion.postMessage(obj);
-};
-
-let escena;
-window.addEventListener("DOMContentLoaded", (e) => {
-  escena = document.getElementById("escena");
-  document.addEventListener("keydown", enviaMensaje);
-  //window.addEventListener("keyup", enviaMensaje);
+window.addEventListener("keydown", function(e) {
+  renderDelegate.postMessage(e);
 });
-
-reproduccion.onmessage = function(e) {
-  console.log(e.data);
-  escena.style.transform = e.data;
+window.addEventListener("keyup",function(e) {
+  renderDelegate.postMessage(e);
+});
+renderDelegate.onmessage = (e) => {
+  console.log("Response: "+e.code);
 }
-//document.addEventListener("load", (e) => {});
+//
+/*\\ Synchronous Code \\*/
+
+
+
+
+
+
+function loop() {
+  
+}
+/*rotation.forEach(value, i => value += deltaRotation[i]);
+  deltaRotation = [0,0];*/
+
+window.onload = (event) => {
+  const escena = document.getElementById("escena");
+  //var gameLoop = setInterval(loop, 50);
+}
