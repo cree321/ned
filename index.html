@@ -2,9 +2,47 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/estilos.css">
   <title>Hola!</title>
   <style>
+body {
+  margin: 0;
+  padding: 0;
+}
+#subtitulos {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 30vh
+  text-align: center;
+  text-shadow: 2px 2px 5px #000;
+}
+#escena {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  perspective: 600px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 50%;
+  transform: translate3d(0,0,0);
+}
+.ensamblaje {
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 50%;
+}
+.geo {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  -webkit-backface-visibility: hidden;/* Safari */
+  backface-visibility: hidden;
+  transform-origin: 50% 50% 50%;
+}
+#s00 {
+  background-color: #f00;
+  transform: translate3d(200px,300px,0) rotate3d(0,0,0,0) scale3d(10,10,1);
+}
     #p00 {
       background-color: #000;
       width: 1em;
