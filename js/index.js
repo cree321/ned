@@ -9,7 +9,7 @@ window.addEventListener("keyup",function(e) {
   renderDelegate.postMessage(e.key);
 });
 renderDelegate.onmessage = (e) => {
-  console.log("Response: "+e);
+  console.log("Response: "+e.data);
 }
 //
 /*\\ Synchronous Code \\*/
