@@ -1,4 +1,4 @@
-var reproduccion = new Worker("js/periferico.js");
+const reproduccion = new Worker("js/periferico.js");
 
 var enviaMensaje = function(e) {
   var obj = JSON.parse(JSON.stringify(e));
@@ -11,7 +11,9 @@ window.addEventListener("DOMContentLoaded", (e) => {
   document.addEventListener("keydown", enviaMensaje);
   //window.addEventListener("keyup", enviaMensaje);
 });
+
 reproduccion.onmessage = function(e) {
+  console.log(e.data);
   escena.style.transform = e.data;
 }
 //document.addEventListener("load", (e) => {});
