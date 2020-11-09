@@ -3,8 +3,10 @@ var deltaRotation = [0,0];
 
 onmessage = function(e) {
   if (e.defaultPrevented) {
+    console.log("Default.");
     return; // Do nothing if the event was already processed
   }
+  console.log(e.key + "pressed.");
   switch (e.key) {
     case "ArrowDown":// code for "down arrow" key press.
       deltaRotation[0] += -20;
