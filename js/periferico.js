@@ -6,8 +6,8 @@ onmessage = function(e) {
     console.log("Default.");
     return; // Do nothing if the event was already processed
   }
-  console.log(e.key + "pressed.");
-  switch (e.key) {
+  console.log(e.code + " pressed.");
+  switch (e.code) {
     case "ArrowDown":// code for "down arrow" key press.
       deltaRotation[0] += -20;
       break;
