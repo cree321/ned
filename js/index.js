@@ -10,10 +10,11 @@ window.addEventListener("keyup",function(e) {
 });
 renderDelegate.onmessage = (e) => {
   console.log("Response: "+e.data);
+  escena.style.transform = e.data;
 }
 //
 /*\\ Synchronous Code \\*/
-
+const escena = document.getElementById("escena");
 
 
 
@@ -26,6 +27,6 @@ function loop() {
   deltaRotation = [0,0];*/
 
 window.onload = (event) => {
-  const escena = document.getElementById("escena");
+  //const escena = document.getElementById("escena");
   //var gameLoop = setInterval(loop, 50);
 }
