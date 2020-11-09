@@ -1,6 +1,6 @@
 "use strict";
 /*\\ Asynchronous Code \\*/
-var renderDelegate = new Worker("renderDelegate.js");
+var renderDelegate = new Worker("js/renderDelegate.js");
 
 window.addEventListener("keydown", function(e) {
   renderDelegate.postMessage(e);
