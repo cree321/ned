@@ -1,7 +1,8 @@
 var reproduccion = new Worker("periferico.js");
 
 var enviaMensaje = function(e) {
-  reproduccion.postMessage(e);
+  var obj = JSON.parse(JSON.stringify(e));
+  reproduccion.postMessage(obj);
 };
 
 let escena;
