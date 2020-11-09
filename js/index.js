@@ -1,4 +1,4 @@
-var reproduccion = new Worker("periferico.js");
+var reproduccion = new Worker("js/periferico.js");
 
 var enviaMensaje = function(e) {
   var obj = JSON.parse(JSON.stringify(e));
