@@ -1,6 +1,7 @@
+var rotation = [50,0];
 onmessage = (e) => {
   console.log(e.data);
-  postMessage(e.data);
+  postMessage("rotateY("+rotation[0]+"deg)");
 }
 
 function something() {
