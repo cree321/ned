@@ -1,6 +1,6 @@
 onmessage = (e) => {
   console.log(e);
-  return e;
+  postmessage(e);
 }
 
 function something() {
