@@ -8,7 +8,7 @@ onmessage = (e) => {
     case "mousemove":
       rotation[0] = rotation[0] %360 + e.movementY;
       rotation[1] = rotation[1] %360 + e.movementX;
-      postMessage("rotateX("+rotation[1]"deg) rotateY("+rotation[0]+"deg)");
+      postMessage("rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)");
       break;
     case "keydown":
       if (e.repeat) {
