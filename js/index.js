@@ -2,12 +2,15 @@
 /*\\ Asynchronous Code \\*/
 var renderDelegate = new Worker("js/renderDelegate.js");
 
-window.addEventListener("keydown", (e) => renderDelegate.postMessage(e.key));
-window.addEventListener("keyup", (e) => renderDelegate.postMessage(e.key));
-renderDelegate.onmessage = (e) => {
-  console.log("Response: "+e.data);
-  escena.style.transform = e.data;
-}
+// Pointer
+/*window.addEventListener("pointerdown", (e) => renderDelegate.postMessage({e}));
+window.addEventListener("pointerup", (e) => renderDelegate.postMessage({e}));*/
+window.addEventListener("mousemove", (e) => renderDelegate.postMessage({e}));
+// Keyboard
+window.addEventListener("keydown", (e) => renderDelegate.postMessage({e}));
+window.addEventListener("keyup", (e) => renderDelegate.postMessage({e}));
+// Worker
+renderDelegate.onmessage = (e) => {escena.style.transform = e.data;}
 //
 /*\\ Synchronous Code \\*/
 const escena = document.getElementById("escena");
