@@ -5,10 +5,10 @@ var renderDelegate = new Worker("js/renderDelegate.js");
 // Pointer
 /*window.addEventListener("pointerdown", (e) => renderDelegate.postMessage({e}));
 window.addEventListener("pointerup", (e) => renderDelegate.postMessage({e}));*/
-window.addEventListener("mousemove", (e) => renderDelegate.postMessage({e}));
+window.addEventListener("mousemove", (e) => renderDelegate.postMessage(Object.assign({}, e)));
 // Keyboard
-window.addEventListener("keydown", (e) => renderDelegate.postMessage({e}));
-window.addEventListener("keyup", (e) => renderDelegate.postMessage({e}));
+window.addEventListener("keydown", (e) => renderDelegate.postMessage(Object.assign({}, e)));
+window.addEventListener("keyup", (e) => renderDelegate.postMessage(Object.assign({}, e)));
 // Worker
 renderDelegate.onmessage = (e) => {escena.style.transform = e.data;}
 //
