@@ -3,9 +3,7 @@
 var renderDelegate = new Worker("js/renderDelegate.js");
 
 window.addEventListener("keydown", (e) => renderDelegate.postMessage(e.key));
-window.addEventListener("keyup",function(e) {
-  renderDelegate.postMessage(e.key);
-});
+window.addEventListener("keyup", (e) => renderDelegate.postMessage(e.key));
 renderDelegate.onmessage = (e) => {
   console.log("Response: "+e.data);
   escena.style.transform = e.data;
