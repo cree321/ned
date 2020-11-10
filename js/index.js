@@ -2,9 +2,7 @@
 /*\\ Asynchronous Code \\*/
 var renderDelegate = new Worker("js/renderDelegate.js");
 
-window.addEventListener("keydown", function(e) {
-  renderDelegate.postMessage(e.key);
-});
+window.addEventListener("keydown", (e) => renderDelegate.postMessage(e.key));
 window.addEventListener("keyup",function(e) {
   renderDelegate.postMessage(e.key);
 });
