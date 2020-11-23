@@ -1,10 +1,14 @@
+// Scene Description
 var displacement = [0,0,0];
 var rotation = [0,0];
 var scale = [0,0,0];
-//                 x,y,z (ryx)
-var translation = [0,0,0]
+// Scene Physics
+var velocity = [0,0,0];
+
 onmessage = (e) => {
-  switch(e.type) {
+  console.log(e);
+  console.log(e.data);
+  /*switch(e.type) {
     case "mousemove":
       rotation[0] = rotation[0] %360 + e.movementY;
       rotation[1] = rotation[1] %360 + e.movementX;
@@ -44,7 +48,7 @@ onmessage = (e) => {
           break;
         }
       break;
-  }
+  }*/
 }
 
 function something() {
