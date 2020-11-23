@@ -7,7 +7,7 @@ var velocity = [0,0,0];
 
 onmessage = (e) => {
   console.log(e.data);
-  console.log(JSON.parse(e));
+  console.log(e);
   /*switch(e.type) {
     case "mousemove":
       rotation[0] = rotation[0] %360 + e.movementY;
