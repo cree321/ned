@@ -6,8 +6,8 @@ var scale = [0,0,0];
 var velocity = [0,0,0];
 
 onmessage = (e) => {
-  console.log(e.data);
   console.log(e);
+  console.log(e.data);
   /*switch(e.type) {
     case "mousemove":
       rotation[0] = rotation[0] %360 + e.movementY;
