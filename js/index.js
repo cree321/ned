@@ -5,15 +5,15 @@ renderDelegate.onmessage = (e) => {escena.style.transform = e.data;}
 
 function replacer(key, value) {
   // Filtering out properties
-  if (typeof value === 'string') {
-    return undefined;
+  if (key === "type"||"key") {
+    return value;
   }
-  return value;
+  return undefined;
 }
 
 window.onload = (event) => {
   const escena = document.getElementById("escena");
-  window.addEventListener("keydown", (e) => renderDelegate.postMessage(JSON.stringify(e, ['type', 'data'])));
+  window.addEventListener("keydown", (e) => renderDelegate.postMessage(JSON.stringify(e, replacer)));
   window.addEventListener("keyup", (e) => renderDelegate.postMessage(Object.assign({}, e)));
   //window.addEventListener("pointerdown", (e) => renderDelegate.postMessage({e}));
   //window.addEventListener("pointerup", (e) => renderDelegate.postMessage({e}));
