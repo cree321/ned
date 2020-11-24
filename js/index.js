@@ -9,7 +9,7 @@ window.onload = (event) => {
     var event = new e.constructor(e.type, e);
     renderDelegate.postMessage(event);
   });*/
-  window.addEventListener("keyup", (e) => renderDelegate.postMessage(Object.assign({}, e)));
+  window.addEventListener("keyup", (e) => renderDelegate.postMessage({type: 0, eventData: e.key}));
   //window.addEventListener("pointerdown", (e) => renderDelegate.postMessage({e}));
   //window.addEventListener("pointerup", (e) => renderDelegate.postMessage({e}));
   //window.addEventListener("mousemove", (e) => renderDelegate.postMessage(Object.assign({}, e)));
