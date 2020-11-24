@@ -5,7 +5,7 @@ renderDelegate.onmessage = (e) => {escena.style.transform = e.data;}
 
 window.onload = (event) => {
   const escena = document.getElementById("escena");
-  window.addEventListener("keydown", (e) => console.log({type: "keydown", eventData: e.data}));//renderDelegate.postMessage({type: e.typeArg, eventData: e.KeyboardEventInit}));
+  window.addEventListener("keydown", (e) => console.log(var event = new KeyboardEvent(e.typeArg, e.KeyboardEventInit)));//renderDelegate.postMessage({type: e.typeArg, eventData: e.KeyboardEventInit}));
   window.addEventListener("keyup", (e) => renderDelegate.postMessage(Object.assign({}, e)));
   //window.addEventListener("pointerdown", (e) => renderDelegate.postMessage({e}));
   //window.addEventListener("pointerup", (e) => renderDelegate.postMessage({e}));
