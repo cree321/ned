@@ -3,18 +3,18 @@ var displacement = [0,0,0];
 var rotation = [0,0];
 var scale = [0,0,0];
 // Scene Physics
-var velocity = [0,0,0];
+var translation = [0,0,0];
+// Input Map???
 
 onmessage = (e) => {
-  console.log(e);
   console.log(e.data);
-  /*switch(e.type) {
-    case "mousemove":
+  switch(e.type) {
+    case 2:
       rotation[0] = rotation[0] %360 + e.movementY;
       rotation[1] = rotation[1] %360 + e.movementX;
       postMessage("rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)");
       break;
-    case "keydown":
+    case 1:
       if (e.repeat) {
         e.preventDefault()
       } else {
@@ -36,7 +36,7 @@ onmessage = (e) => {
       displacement.forEach(value, i => value += translation[i]);
       postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
       break;
-    case "keyup":
+    case 0:
       switch(e.key) {
         case "w":
         case "s":
@@ -48,7 +48,7 @@ onmessage = (e) => {
           break;
         }
       break;
-  }*/
+  }
 }
 
 function something() {
