@@ -5,7 +5,7 @@ renderDelegate.onmessage = (e) => {escena.style.transform = e.data;}
 
 window.onload = (event) => {
   const escena = document.getElementById("escena");
-  window.addEventListener("keydown", (e) => {type: 1, eventData: e.key});/*
+  window.addEventListener("keydown", (e) => renderDelegate.postMessage({type: 1, eventData: e.key}));/*
     var event = new e.constructor(e.type, e);
     renderDelegate.postMessage(event);
   });*/
