@@ -6,8 +6,9 @@ var scale = [0,0,0];
 var translation = [0,0,0];
 // Input Map???
 
-onmessage = (e) => {
-  console.log(e.data);
+onmessage = (message) => {
+  var e = message.data;
+  console.log(e);
   switch(e.type) {
     case 2:
       rotation[0] = rotation[0] %360 + e.movementY;
@@ -15,10 +16,10 @@ onmessage = (e) => {
       postMessage("rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)");
       break;
     case 1:
-      if (e.repeat) {
+      /*if (e.repeat) {
         e.preventDefault()
-      } else {
-        switch(e.key) {
+      } else {*/
+        switch(e.eventData) {
           case "w":
             translation[2] = 10;
             break;
@@ -32,12 +33,12 @@ onmessage = (e) => {
             translation[0] = 10;
             break;
         }
-      }
+      //}
       displacement.forEach(value, i => value += translation[i]);
       postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
       break;
     case 0:
-      switch(e.key) {
+      switch(e.eventData) {
         case "w":
         case "s":
           translation[2] = 0;
