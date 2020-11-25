@@ -1,3 +1,6 @@
+// Game State
+var pause = 0;
+var debug = 0;
 // Scene Description
 var displacement = [0,0,0];
 var rotation = [0,0];
@@ -30,6 +33,12 @@ onmessage = (message) => {
         case "KeyD":
           velocity[0] = -10;
           break;
+        case "Escape":
+          pause = (pause + 1)%2;
+          break;
+        case "Equal":
+          debug = (debug + 1)%2;
+          break;
       }
       /*displacement.forEach((value, i) => value += translation[i]);*/
       //postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
@@ -53,8 +62,8 @@ function sceneUpdate() {
   //acceleration.forEach((value, i) => {if(value = 0) velocity[i] += value});
   //velocity.forEach((value, i) => {if(Math.abs(velocity) < 20) value += acceleration[i]});
   //velocity.forEach((value, i) => {if(acceleration[i] = 0) value -= value/10});
-  displacement.forEach((value, i) => value += velocity[i]);
-  console.log(displacement[0]+", "+displacement[1]+", "+displacement[2]);
+  displacement.forEach((value, i) => console.log(value += velocity[i]));
+  //console.log(displacement[0]+", "+displacement[1]+", "+displacement[2]);
   postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
 }
 
