@@ -19,23 +19,22 @@ onmessage = (message) => {
       /*if (e.repeat) {
         e.preventDefault()
       } else {*/
-      console.log("moving");
         switch(e.eventData) {
           case "w":console.log("moving forward");
-            translation[2] = 10;
+            displacement[2] += 10;
             break;
           case "a":console.log("moving left");
-            translation[0] = -10;
+            displacement[0] += -10;
             break;
           case "s":console.log("moving backward");
-            translation[2] = -10;
+            displacement[2] += -10;
             break;
           case "d":console.log("moving right");
-            translation[0] = 10;
+            displacement[0] += 10;
             break;
         }
       //}
-      displacement.forEach((value, i) => value += translation[i]);
+      /*displacement.forEach((value, i) => value += translation[i]);*/
       postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
       break;
     case 0:
