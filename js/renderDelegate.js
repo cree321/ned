@@ -16,21 +16,21 @@ onmessage = (message) => {
       postMessage("rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)");
       break;
     case 1:
-      /*if (e.repeat) {
-        e.preventDefault()
-      } else {*/
-        switch(e.eventData) {
+      if (e.repeat) {
+        message.preventDefault()
+      } else {
+        switch(e.code) {
           case "w":console.log("moving forward");
             displacement[2] += 10;
             break;
           case "a":console.log("moving left");
-            displacement[0] += -10;
+            displacement[0] += 10;
             break;
           case "s":console.log("moving backward");
             displacement[2] += -10;
             break;
           case "d":console.log("moving right");
-            displacement[0] += 10;
+            displacement[0] -= 10;
             break;
         }
       //}
@@ -38,7 +38,7 @@ onmessage = (message) => {
       postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
       break;
     case 0:
-      switch(e.eventData) {
+      switch(e.code) {
         case "w":
         case "s":
           translation[2] = 0;
