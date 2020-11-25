@@ -3,7 +3,8 @@ var displacement = [0,0,0];
 var rotation = [0,0];
 var scale = [0,0,0];
 // Scene Physics
-var translation = [0,0,0];
+var acceleration = [0,0,0];// which direction is the viewer intending to move
+var velocity = [0,0,0];// which direction/magnitude is the viewer moving
 // Input Map???
 
 onmessage = (message) => {
@@ -16,24 +17,20 @@ onmessage = (message) => {
       postMessage("rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)");
       break;
     case 1:
-      /*if (e.repeat) {
-        message.preventDefault();
-      } else {*/
-        switch(e.code) {
-          case "KeyW":
-            displacement[2] += 10;
-            break;
-          case "KeyA":
-            displacement[0] += 10;
-            break;
-          case "KeyS":
-            displacement[2] += -10;
-            break;
-          case "KeyD":
-            displacement[0] -= 10;
-            break;
-        }
-      //}
+      switch(e.code) {
+        case "KeyW":
+          acceleration[2] = 0.1;
+          break;
+        case "KeyA":
+          acceleration[0] = 0.1;
+          break;
+        case "KeyS":
+          acceleration[2] = -0.1;
+          break;
+        case "KeyD":
+          acceleration[0] = -0.1;
+          break;
+      }
       /*displacement.forEach((value, i) => value += translation[i]);*/
       postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
       break;
@@ -41,19 +38,23 @@ onmessage = (message) => {
       switch(e.code) {
         case "KeyW":
         case "KeyS":
-          translation[2] = 0;
+          acceleration[2] = 0;
           break;
         case "KeyA":
         case "KeyD":
-          translation[0] = 0;
+          acceleration[0] = 0;
           break;
         }
       break;
   }
 }
 
-function something() {
-  rotation[0] = rotation[0] % 360 + 5;
-  //rotation[1] = rotation[1] % 360 + 5;
-  escena.style.transform = "rotateY("+rotation[0]+"deg)";//rotateY("+rotation[1]+"deg)";
+function sceneUpdate() {
+  //acceleration.forEach((value, i) => {if(value = 0) velocity[i] += value});
+  velocity.forEach((value, i) => {if(Math.abs(velocity) < 20) value += acceleration[i]});
+  velocity.forEach((value, i) => {if(acceleration[i] = 0) value -= value/10});
+  displacement.forEach((value, i) => value += velocity[i]);
+  
 }
+
+setInterval(sceneUpdate, 50);
