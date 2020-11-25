@@ -32,7 +32,7 @@ onmessage = (message) => {
           break;
       }
       /*displacement.forEach((value, i) => value += translation[i]);*/
-      postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
+      //postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
       break;
     case 0:
       switch(e.code) {
@@ -54,7 +54,7 @@ function sceneUpdate() {
   //velocity.forEach((value, i) => {if(Math.abs(velocity) < 20) value += acceleration[i]});
   //velocity.forEach((value, i) => {if(acceleration[i] = 0) value -= value/10});
   displacement.forEach((value, i) => value += velocity[i]);
-  
+  postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
 }
 
 setInterval(sceneUpdate, 50);
