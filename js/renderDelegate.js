@@ -20,16 +20,16 @@ onmessage = (message) => {
         e.preventDefault()
       } else {*/
         switch(e.eventData) {
-          case "w":
+          case "w":console.log("moving forward");
             translation[2] = 10;
             break;
-          case "a":
+          case "a":console.log("moving left");
             translation[0] = -10;
             break;
-          case "s":
+          case "s":console.log("moving backward");
             translation[2] = -10;
             break;
-          case "d":
+          case "d":console.log("moving right");
             translation[0] = 10;
             break;
         }
