@@ -20,16 +20,16 @@ onmessage = (message) => {
         message.preventDefault();
       } else {
         switch(e.code) {
-          case "w":console.log("moving forward");
+          case "KeyW":console.log("moving forward");
             displacement[2] += 10;
             break;
-          case "a":console.log("moving left");
+          case "KeyA":console.log("moving left");
             displacement[0] += 10;
             break;
-          case "s":console.log("moving backward");
+          case "KeyS":console.log("moving backward");
             displacement[2] += -10;
             break;
-          case "d":console.log("moving right");
+          case "KeyD":console.log("moving right");
             displacement[0] -= 10;
             break;
         }
@@ -39,12 +39,12 @@ onmessage = (message) => {
       break;
     case 0:
       switch(e.code) {
-        case "w":
-        case "s":
+        case "KeyW":
+        case "KeyS":
           translation[2] = 0;
           break;
-        case "a":
-        case "d":
+        case "KeyA":
+        case "KeyD":
           translation[0] = 0;
           break;
         }
