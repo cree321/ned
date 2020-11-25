@@ -19,16 +19,16 @@ onmessage = (message) => {
     case 1:
       switch(e.code) {
         case "KeyW":
-          acceleration[2] = 0.1;
+          velocity[2] = 10;
           break;
         case "KeyA":
-          acceleration[0] = 0.1;
+          velocity[0] = 10;
           break;
         case "KeyS":
-          acceleration[2] = -0.1;
+          velocity[2] = -10;
           break;
         case "KeyD":
-          acceleration[0] = -0.1;
+          velocity[0] = -10;
           break;
       }
       /*displacement.forEach((value, i) => value += translation[i]);*/
@@ -38,11 +38,11 @@ onmessage = (message) => {
       switch(e.code) {
         case "KeyW":
         case "KeyS":
-          acceleration[2] = 0;
+          velocity[2] = 0;
           break;
         case "KeyA":
         case "KeyD":
-          acceleration[0] = 0;
+          velocity[0] = 0;
           break;
         }
       break;
@@ -51,8 +51,8 @@ onmessage = (message) => {
 
 function sceneUpdate() {
   //acceleration.forEach((value, i) => {if(value = 0) velocity[i] += value});
-  velocity.forEach((value, i) => {if(Math.abs(velocity) < 20) value += acceleration[i]});
-  velocity.forEach((value, i) => {if(acceleration[i] = 0) value -= value/10});
+  //velocity.forEach((value, i) => {if(Math.abs(velocity) < 20) value += acceleration[i]});
+  //velocity.forEach((value, i) => {if(acceleration[i] = 0) value -= value/10});
   displacement.forEach((value, i) => value += velocity[i]);
   
 }
