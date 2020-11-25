@@ -61,8 +61,8 @@ onmessage = (message) => {
 function sceneUpdate() {
   //acceleration.forEach((value, i) => {if(value = 0) velocity[i] += value});
   //velocity.forEach((value, i) => {if(Math.abs(velocity) < 20) value += acceleration[i]});
-  //velocity.forEach((value, i) => {if(acceleration[i] = 0) value -= value/10});
-  displacement.forEach((value, i) => console.log(value += velocity[i]));
+  velocity.forEach((value, i) => displacement[i] += value);
+  //displacement.forEach((value, i) => value += velocity[i]);
   //console.log(displacement[0]+", "+displacement[1]+", "+displacement[2]);
   postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
 }
