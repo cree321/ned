@@ -19,6 +19,7 @@ onmessage = (message) => {
       /*if (e.repeat) {
         e.preventDefault()
       } else {*/
+      console.log("moving");
         switch(e.eventData) {
           case "w":console.log("moving forward");
             translation[2] = 10;
