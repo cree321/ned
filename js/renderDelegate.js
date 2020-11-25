@@ -17,7 +17,7 @@ onmessage = (message) => {
       break;
     case 1:
       if (e.repeat) {
-        message.preventDefault()
+        message.preventDefault();
       } else {
         switch(e.code) {
           case "w":console.log("moving forward");
