@@ -34,7 +34,7 @@ onmessage = (message) => {
             break;
         }
       //}
-      displacement.forEach(value => value += translation[i]);
+      displacement.forEach((value, i) => value += translation[i]);
       postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
       break;
     case 0:
