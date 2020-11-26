@@ -1,3 +1,4 @@
+"use strict";
 // Game State
 var pause = 0;
 var debug = 0;
