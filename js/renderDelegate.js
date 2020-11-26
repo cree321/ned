@@ -103,6 +103,7 @@ function sceneUpdate() {
   }
   if(change)
     postMessage(commit);
+  commit = "";
 }
 
 setInterval(sceneUpdate, 50);
