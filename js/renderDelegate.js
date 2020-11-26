@@ -94,12 +94,12 @@ function sceneUpdate() {
   velocity.forEach((value, i) => displacement[i] += value);
   //displacement.forEach((value, i) => value += velocity[i]);
   //console.log(displacement[0]+", "+displacement[1]+", "+displacement[2]);
-  postMessage({type: 0, transform: "translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)"});
+  postMessage({type: 0, transform: "translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px);"});
   }
   if(rotV[0] || rotV[1]) {change = 1;
     rotation[0] = (rotation[0] + rotV[0])%360;
     rotation[1] = (rotation[1] + rotV[1])%360;
-    postMessage({type: 1, transform: "rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)"});
+    postMessage({type: 1, transform: "rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg);"});
   }
   /*if(change) {
     commit = "translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px) rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)";
