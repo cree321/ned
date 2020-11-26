@@ -20,6 +20,7 @@ body{margin: 0;}
   width: 1em;
   height: 1em;
   position: absolute;
+  background-image: linear-gradient(#f00, #0f0);
   /*transform: none;*/
   /*backface-visibility: hidden;*/
 }
@@ -33,10 +34,10 @@ body{margin: 0;}
 <div id="viewport" class="assembly" style="position: fixed; perspective: 800px;">
   <div id="camera" class="assembly" style="position: absolute; top: 50%; left: 50%; transform: translateZ(800px);">
   <div id="escena" class="assembly">
-    <div style="background-image: linear-gradient(#f00, #0f0); transform: translate3d(0px,0px,-380px) scale3d(10,5,1) rotateY(0deg);" class="geo"></div><!--front wall-->
-    <div style="background-image: linear-gradient(#f00, #0f0); transform: translate3d(-80px,0px,60px) scale3d(1,5,100) rotateY(90deg);" class="geo"></div><!--left wall-->
-    <div style="background-image: linear-gradient(#f00, #0f0); transform: translate3d(-40px,0px,200px) scale3d(1,5,10) rotateY(180deg);" class="geo"></div><!--back wall-->
-    <div style="background-image: linear-gradient(#f00, #0f0); transform: translate3d(80px,0px,0px) scale3d(1,5,100) rotateY(270deg);" class="geo"></div><!--right wall-->
+    <div style="transform: translate3d(0px,0px,-380px) scale3d(10,5,1) rotateY(0deg);" class="geo"></div><!--front wall-->
+    <div style="transform: translate3d(-80px,0px,60px) scale3d(1,5,100) rotateY(90deg);" class="geo"></div><!--left wall-->
+    <div style="transform: translate3d(-40px,0px,200px) scale3d(1,5,10) rotateY(180deg);" class="geo"></div><!--back wall-->
+    <div style="transform: translate3d(80px,0px,0px) scale3d(1,5,100) rotateY(270deg);" class="geo"></div><!--right wall-->
     <!--div id="s00" class="geo 0">TEST</div>
     <div id="s01" class="geo 0"></div>
     <div id="s02" class="geo 0"></div>
