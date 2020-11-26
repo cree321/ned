@@ -1,16 +1,18 @@
 "use strict";
-// Game State
+/* Game State */
 var pause = 0;
 var debug = 0;
-// Scene Description
+/* Scene Description */
 var displacement = [0,0,0];
 var rotation = [0,0];
 var scale = [0,0,0];
-// Scene Physics
+/* Scene Physics */
 var acceleration = [0,0,0];// which direction is the viewer intending to move
 var velocity = [0,0,0];// which direction/magnitude is the viewer moving
 var rotV = [0,0];// rotation velocity
-// Input Map???
+var maxFall = 0;// distance to floor
+// POST: Input Map???
+
 
 onmessage = (message) => {
   var e = message.data;
@@ -85,13 +87,14 @@ onmessage = (message) => {
   }
 }
 
+//function gravity() {}
+
 function sceneUpdate() {
+  //gravity();
   if(velocity[0] || velocity[1] || velocity[2]) {
-  //acceleration.forEach((value, i) => {if(value = 0) velocity[i] += value});
-  //velocity.forEach((value, i) => {if(Math.abs(velocity) < 20) value += acceleration[i]});
-  velocity.forEach((value, i) => displacement[i] += value);
-  //displacement.forEach((value, i) => value += velocity[i]);
-  //console.log(displacement[0]+", "+displacement[1]+", "+displacement[2]);
+  //velocity.forEach((value, i) => displacement[i] += value);
+  displacement[0] = velocity[0]*Math.sin(rotation[0] * Math.PI / 180);
+  displacement[2] = velocity[2]*Math.sin(rotation[1] * Math.PI / 180);
   postMessage({type: 0, transform: "translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)"});
   }
   if(rotV[0] || rotV[1]) {
