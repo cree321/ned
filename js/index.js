@@ -1,6 +1,8 @@
 "use strict";
 const renderDelegate = new Worker("js/renderDelegate.js");
 renderDelegate.onmessage = (e) => {escena.style.transform = e.data;}
+/*const sceneDelegate = new Worker("js/sceneDelegate.js");
+sceneDelegate.onmessage = (e) => {console.log(e);}*/
 
 
 window.onload = (event) => {
