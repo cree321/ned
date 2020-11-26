@@ -73,11 +73,11 @@ onmessage = (message) => {
         // rotation
         case "ArrowUp":
         case "ArrowDown":
-          rotV[0] = 0;
+          rotV[1] = 0;
           break;
         case "ArrowLeft":
         case "ArrowRight":
-          rotV[1] = 0;
+          rotV[0] = 0;
           break;
         }
       break;
