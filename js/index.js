@@ -9,6 +9,7 @@ sceneDelegate.onmessage = (e) => {console.log(e);}*/
 
 
 window.onload = (event) => {
+  const camera = document.getElementById("camera");
   const escena = document.getElementById("escena");
   window.addEventListener("keydown", (e) => {if(!e.repeat) renderDelegate.postMessage({type: 1, code: e.code});});
   window.addEventListener("keyup", (e) => renderDelegate.postMessage({type: 0, code: e.code}));
