@@ -5,12 +5,15 @@
   <title>Cube</title>
   <style>
 body{margin: 0;}
+.assembly {
+  width: 0;
+  height: 0;
+}
 #escena {
-  position: fixed;
+  position: absolute;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  perspective: 800px;
   transform-style: preserve-3d;
 }
 .geo {
@@ -26,9 +29,9 @@ body{margin: 0;}
   </style>
 </head>
 <body>
-<div id="viewport" style="perspective: 800px;">
-  <div id="camera" style="transform: translateZ(800px);">
-  <div id="escena">
+<div id="viewport" class="assembly" style="perspective: 800px;">
+  <div id="camera" class="assembly" style="transform: translateZ(800px);">
+  <div id="escena" class="assembly">
     <div style="background-image: linear-gradient(#f00, #0f0); transform: translate3d(0px,0px,-380px) scale3d(10,5,1) rotateY(0deg);" class="geo"></div><!--front wall-->
     <div style="background-image: linear-gradient(#f00, #0f0); transform: translate3d(-80px,0px,60px) scale3d(1,5,100) rotateY(90deg);" class="geo"></div><!--left wall-->
     <div style="background-image: linear-gradient(#f00, #0f0); transform: translate3d(-40px,0px,200px) scale3d(1,5,10) rotateY(180deg);" class="geo"></div><!--back wall-->
