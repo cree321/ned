@@ -1,8 +1,8 @@
 "use strict";
 const renderDelegate = new Worker("js/renderDelegate.js");
 renderDelegate.onmessage = (e) => {
-  if(e.data.type) camera.style.transform = "translateZ(800px); "+e.data.transform;
-  else escena.style.transform = e.data.transform;
+  if(e.data.type) {camera.style.transform = "translateZ(800px); "+e.data.transform;}
+  else {escena.style.transform = e.data.transform;}
 }
 /*const sceneDelegate = new Worker("js/sceneDelegate.js");
 sceneDelegate.onmessage = (e) => {console.log(e);}*/
