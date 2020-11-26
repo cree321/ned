@@ -11,7 +11,6 @@ body{margin: 0;}
 }
 #escena {
   position: absolute;
-  overflow: hidden;
   /*width: 100vw;
   height: 100vh;*/
   transform-style: preserve-3d;
@@ -32,7 +31,7 @@ body{margin: 0;}
   </style>
 </head>
 <body>
-<div id="viewport" class="assembly" style="position: fixed; perspective: 800px;">
+<div id="viewport" class="assembly" style="position: fixed; perspective: 800px; overflow: hidden;">
   <div id="camera" class="assembly" style="position: absolute; top: 50%; left: 50%; transform: translateZ(800px);">
   <div id="escena" class="assembly">
     <div style="transform: translate3d(0px,0px,-380px) scale3d(10,5,1) rotateY(0deg);" class="geo"></div><!--front wall-->
