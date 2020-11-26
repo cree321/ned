@@ -84,20 +84,24 @@ onmessage = (message) => {
   }
 }
 
+var change = 0;// has the scene transform changed?
+var commit = "";
 function sceneUpdate() {
-  if(velocity[0] || velocity[1] || velocity[2]) {
+  if(velocity[0] || velocity[1] || velocity[2]) {change = 1;
   //acceleration.forEach((value, i) => {if(value = 0) velocity[i] += value});
   //velocity.forEach((value, i) => {if(Math.abs(velocity) < 20) value += acceleration[i]});
   velocity.forEach((value, i) => displacement[i] += value);
   //displacement.forEach((value, i) => value += velocity[i]);
   //console.log(displacement[0]+", "+displacement[1]+", "+displacement[2]);
-  postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
+  commit = "translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
   }
-  if(rotV[0] || rotV[1]) {
+  if(rotV[0] || rotV[1]) {change = 1;
     rotation[0] = (rotation[0] + rotV[0])%360;
     rotation[1] = (rotation[1] + rotV[1])%360;
-    postMessage("rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)");
+    commit += " rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)");
   }
+  if(change)
+    postMessage(commit);
 }
 
 setInterval(sceneUpdate, 50);
