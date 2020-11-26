@@ -2,7 +2,7 @@
 const renderDelegate = new Worker("js/renderDelegate.js");
 renderDelegate.onmessage = (e) => {
   console.log(e.data);
-  if(e.data.type) {camera.style.transform = "translateZ(800px); "+e.data.transform;console.log(e.data);}
+  if(e.data.type) {camera.style.transform = "translateZ(800px) "+e.data.transform;}
   else {escena.style.transform = e.data.transform;}
 }
 /*const sceneDelegate = new Worker("js/sceneDelegate.js");
