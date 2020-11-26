@@ -1,7 +1,7 @@
 "use strict";
 const renderDelegate = new Worker("js/renderDelegate.js");
 renderDelegate.onmessage = (e) => {
-  console.log(e.data);
+  console.log(e.data.type);
   if(e.data.type) {camera.style.transform = "translateZ(800px) "+e.data.transform;}
   else {escena.style.transform = e.data.transform;}
 }
