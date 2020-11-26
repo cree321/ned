@@ -8,6 +8,7 @@ var scale = [0,0,0];
 // Scene Physics
 var acceleration = [0,0,0];// which direction is the viewer intending to move
 var velocity = [0,0,0];// which direction/magnitude is the viewer moving
+var rotV = [0,0];// rotation velocity
 // Input Map???
 
 onmessage = (message) => {
@@ -21,6 +22,7 @@ onmessage = (message) => {
       break;
     case 1:
       switch(e.code) {
+        // movement
         case "KeyW":
           velocity[2] = 10;
           break;
@@ -33,6 +35,20 @@ onmessage = (message) => {
         case "KeyD":
           velocity[0] = -10;
           break;
+        // rotation
+        case "ArrowUp":
+          rotV[0] = -10;
+          break;
+        case "ArrowLeft":
+          rotV[1] = -10;
+          break;
+        case "ArrowDown":
+          rotV[0] = 10;
+          break;
+        case "ArrowRight":
+          rotV[1] = 10;
+          break;
+        // state
         case "Escape":
           pause = (pause + 1)%2;
           break;
@@ -45,6 +61,7 @@ onmessage = (message) => {
       break;
     case 0:
       switch(e.code) {
+        // movement
         case "KeyW":
         case "KeyS":
           velocity[2] = 0;
@@ -52,6 +69,15 @@ onmessage = (message) => {
         case "KeyA":
         case "KeyD":
           velocity[0] = 0;
+          break;
+        // rotation
+        case "ArrowUp":
+        case "ArrowDown":
+          rotV[0] = 0;
+          break;
+        case "ArrowLeft":
+        case "ArrowRight":
+          rotV[1] = 0;
           break;
         }
       break;
@@ -66,6 +92,11 @@ function sceneUpdate() {
   //displacement.forEach((value, i) => value += velocity[i]);
   //console.log(displacement[0]+", "+displacement[1]+", "+displacement[2]);
   postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
+  }
+  if(rotV[0] || rotV[1]) {
+    rotation[0] = (rotation[0] + rotV[0])%360;
+    rotation[1] = (rotation[1] + rotV[1])%360;
+    postMessage("rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)");
   }
 }
 
