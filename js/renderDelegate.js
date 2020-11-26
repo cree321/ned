@@ -101,9 +101,10 @@ function sceneUpdate() {
     rotation[1] = (rotation[1] + rotV[1])%360;
     commit += " rotateX("+rotation[1]+"deg) rotateY("+rotation[0]+"deg)";
   }
-  if(change)
+  if(change) {
     postMessage(commit);
-  commit = "";
+    commit = "";
+  }
 }
 
 setInterval(sceneUpdate, 50);
