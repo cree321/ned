@@ -38,13 +38,13 @@ onmessage = (message) => {
           break;
         // rotation
         case "ArrowUp":
-          rotV[1] = -5;
+          rotV[1] = 5;
           break;
         case "ArrowLeft":
           rotV[0] = -5;
           break;
         case "ArrowDown":
-          rotV[1] = 5;
+          rotV[1] = -5;
           break;
         case "ArrowRight":
           rotV[0] = 5;
