@@ -59,12 +59,14 @@ onmessage = (message) => {
 }
 
 function sceneUpdate() {
+  if(velocity[0] || velocity[1] || velocity[2]) {
   //acceleration.forEach((value, i) => {if(value = 0) velocity[i] += value});
   //velocity.forEach((value, i) => {if(Math.abs(velocity) < 20) value += acceleration[i]});
   velocity.forEach((value, i) => displacement[i] += value);
   //displacement.forEach((value, i) => value += velocity[i]);
   //console.log(displacement[0]+", "+displacement[1]+", "+displacement[2]);
   postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
+  }
 }
 
 setInterval(sceneUpdate, 50);
