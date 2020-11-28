@@ -17,6 +17,6 @@ window.onload = (event) => {
   //window.addEventListener("pointerdown", (e) => renderDelegate.postMessage({e}));
   //window.addEventListener("pointerup", (e) => renderDelegate.postMessage({e}));
   //window.addEventListener("mousemove", (e) => renderDelegate.postMessage(Object.assign({}, e)));
-  //var gameLoop = setInterval(loop, 50);
+  //var gameLoop = setInterval(loop, 50); IN renderDelegate
 }
 
