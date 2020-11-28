@@ -16,9 +16,8 @@ onmessage = (message) => {
   }, 10100);
   var checker = setInterval(() => {
     if(!isParsing) {
-      clearTimeout(timeout);
       postMessage(commit);
-      console.log("sD: Success!");
+      clearTimeout(timeout);
       clearInterval(checker);
     }
   }, 1000);
