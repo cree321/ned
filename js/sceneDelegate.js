@@ -1,7 +1,7 @@
 "use strict";
 var commit = ``;
 var isParsing = 0;
-const cap0ul = new Request("https://raw.githubusercontent.com/cree321/ned/master/assets/cap0.json");
+const cap0ul = new Request("https://raw.githubusercontent.com/cree321/ned/master/assets/cap0/escena.json");
 
 parseMap(cap0ul);
 
