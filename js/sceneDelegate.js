@@ -1,6 +1,6 @@
 "use strict";
 var commit = '';
-const cap0ul = new Request("https://raw.githubusercontent.com/cree321/cree321.github.io/master/assets/cap0.json");
+const cap0ul = new Request("https://raw.githubusercontent.com/cree321/ned/master/assets/cap0.json");
 
 parseMap(cap0ul);
 
