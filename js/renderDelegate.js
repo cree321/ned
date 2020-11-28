@@ -59,8 +59,6 @@ onmessage = (message) => {
           debug = (debug + 1)%2;
           break;
       }
-      /*displacement.forEach((value, i) => value += translation[i]);*/
-      //postMessage("translate3d("+displacement[0]+"px,"+displacement[1]+"px,"+displacement[2]+"px)");
       break;
     case 0:
       switch(e.code) {
@@ -92,7 +90,6 @@ onmessage = (message) => {
 function sceneUpdate() {
   //gravity();
   if(velocity[0] || velocity[1] || velocity[2]) {
-  //velocity.forEach((value, i) => displacement[i] += value);
   displacement[0] -= velocity[2]*Math.sin(rotation[0] * Math.PI / 180);
   displacement[2] += velocity[2]*Math.cos(rotation[0] * Math.PI / 180);
   displacement[2] += velocity[0]*Math.sin(rotation[0] * Math.PI / 180);
