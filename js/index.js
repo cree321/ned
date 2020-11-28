@@ -6,7 +6,7 @@ renderDelegate.onmessage = (e) => {
   else {escena.style.transform = e.data.transform;}
 }
 const sceneDelegate = new Worker("js/sceneDelegate.js");
-sceneDelegate.onmessage = (e) => {escena.innerHTML = e.data;}
+sceneDelegate.onmessage = (e) => {/*escena.innerHTML = */console.log(e.data);}
 
 window.onload = (event) => {
   const camera = document.getElementById("camera");
