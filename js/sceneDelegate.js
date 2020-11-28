@@ -1,5 +1,5 @@
 "use strict";
-var commit = '';
+var commit = ``;
 const cap0ul = new Request("https://raw.githubusercontent.com/cree321/ned/master/assets/cap0.json");
 
 parseMap(cap0ul);
@@ -13,7 +13,7 @@ onmessage = (message) => {
 }
 
 function parseMap(request) {
-  commit = '';
+  commit = ``;
   fetch(request)
     .then(response => response.json())
     .then(data => {
