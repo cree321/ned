@@ -15,9 +15,9 @@ window.onload = (event) => {
   
   viewport.addEventListener("click", (e) => {
     sceneDelegate.postMessage(null);
-    viewport.style.animation-name = "viewport";
-    viewport.style.animation-duration: "3s";
-    viewport.style.animation-fill-mode: "both";
+    viewport.style.animationName = "viewport";
+    viewport.style.animationDuration: "3s";
+    viewport.style.animationFillMode: "both";
     setTimeout(() => {viewport.style.animation = none;}, 3010);
     window.addEventListener("keydown", (e) => {if(!e.repeat) renderDelegate.postMessage({type: 1, code: e.code});});
     window.addEventListener("keyup", (e) => renderDelegate.postMessage({type: 0, code: e.code}));
