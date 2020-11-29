@@ -8,8 +8,8 @@
   <style>
 body{margin: 0;}
 @keyframes viewport {
-  from {width: 90vw; height: 90vh;}
-  to {width: 100vw; height: 100vh;}
+  from {transform: scale(0.9, 0.9);}
+  to {transform: scale(1, 1);}
 }
 .assembly {
   width: 0;
@@ -29,7 +29,8 @@ body{margin: 0;}
 </head>
 <body class="assembly">
   <h1>la identidad</h1>
-<div id="viewport" style="width: 90vw; height: 90vh; position: fixed; overflow: hidden; perspective: 800px; text-align: center;">
+<div id="viewport" style="width: 100vw; height: 100vh; position: fixed; overflow: hidden; perspective: 800px; margin: auto; transform: scale(0.9, 0.9);">
+<!--OnClick/ position: fixed; transform: none;-->
   <div id="camera" class="assembly" style="top: 50%; left: 50%; transform: translateZ(800px);">
   <div id="escena" class="assembly">
   </div>
