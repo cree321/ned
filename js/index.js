@@ -21,7 +21,7 @@ window.onload = (event) => {
     titlecard.style.animationFillMode = "both";
     setTimeout(() => {
       viewport.style.opacity = 1;
-      titlecard.style.animation = none;
+      titlecard.style.animation = "none";
       titlecard.style.opacity = 0;
     }, 3010);
     window.addEventListener("keydown", (e) => {if(!e.repeat) renderDelegate.postMessage({type: 1, code: e.code});});
