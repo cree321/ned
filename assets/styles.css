@@ -9,9 +9,12 @@
   width: 100vw;
   left: 0;
 }
+.titlecard-preview-container {
+  display: flex;
+}
 .titlecard-preview:hover {
   
 }
-.titlecard-preview-container {
-  display: flex;
+.titlecard-title {
+  z-index: 2;
 }
