@@ -1,0 +1,16 @@
+@keyframes titlecard-hover {
+  from {transform: scale(0.9, 0.9);}
+  to {transform: scale(1, 1);}
+}
+#cap0 {
+  background-image: linear-gradient(#566, #9aa,#abb);
+}
+.titlecard {
+  width: 100vw;
+}
+.titlecard-preview:hover {
+  
+}
+.titlecard-preview-container {
+  display: flex;
+}
