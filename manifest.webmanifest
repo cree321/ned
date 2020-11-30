@@ -2,5 +2,5 @@
   "name": "Ned",
   "short_name": "Ned",
   "display": "standalone",
-  "background_color": "black"
+  "background_color": "#000"
 }
