@@ -9,16 +9,21 @@ const sceneDelegate = new Worker("js/sceneDelegate.js");
 sceneDelegate.onmessage = (e) => {escena.innerHTML = e.data;}
 
 window.onload = (event) => {
+  const titlecard = document.getElementById("cap0");
   const viewport = document.getElementById("viewport");
   const camera = document.getElementById("camera");
   const escena = document.getElementById("escena");
   
-  viewport.addEventListener("click", (e) => {
+  titlecard.addEventListener("click", (e) => {
     sceneDelegate.postMessage(null);
-    viewport.style.animationName = "viewport";
-    viewport.style.animationDuration: "3s";
-    viewport.style.animationFillMode: "both";
-    setTimeout(() => {viewport.style.animation = none;}, 3010);
+    titlecard.style.animationName = "viewport";
+    titlecard.style.animationDuration = "3s";
+    titlecard.style.animationFillMode = "both";
+    setTimeout(() => {
+      viewport.style.opacity = 1;
+      titlecard.style.animation = none;
+      titlecard.style.opacity = 0;
+    }, 3010);
     window.addEventListener("keydown", (e) => {if(!e.repeat) renderDelegate.postMessage({type: 1, code: e.code});});
     window.addEventListener("keyup", (e) => renderDelegate.postMessage({type: 0, code: e.code}));
   }, { once: true });
