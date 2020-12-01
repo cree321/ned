@@ -17,11 +17,11 @@
 .titlecard-preview-container {
   display: flex;
   justify-content: center;
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 .titlecard-preview:hover {
   
 }
 .titlecard-title {
-  z-index: 200;
+  
 }
