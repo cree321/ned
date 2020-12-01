@@ -11,6 +11,7 @@
 }
 .titlecard-preview-container {
   display: flex;
+  justify-content: center;
 }
 .titlecard-preview:hover {
   
