@@ -10,6 +10,9 @@
   left: 0;
   padding: 1em;
 }
+.titlecard-header {
+  margin: 0;
+}
 .titlecard-preview-container {
   display: flex;
   justify-content: center;
