@@ -8,6 +8,7 @@
 .titlecard {
   width: 100vw;
   left: 0;
+  padding: 3em;
 }
 .titlecard-preview-container {
   display: flex;
