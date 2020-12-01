@@ -23,5 +23,5 @@
   
 }
 .titlecard-title {
-  position: absolute;
+  z-index: 1;
 }
