@@ -9,6 +9,7 @@ const sceneDelegate = new Worker("js/sceneDelegate.js");
 sceneDelegate.onmessage = (e) => {escena.innerHTML = e.data;}
 
 window.onload = (event) => {
+  const title = document.getElementById("title");
   const titlecard = document.getElementById("cap0");
   const viewport = document.getElementById("viewport");
   const camera = document.getElementById("camera");
@@ -16,6 +17,7 @@ window.onload = (event) => {
   
   titlecard.addEventListener("click", (e) => {
     sceneDelegate.postMessage(null);
+    title.remove();
     titlecard.style.animationName = "viewport";
     titlecard.style.animationDuration = "3s";
     titlecard.style.animationFillMode = "both";
