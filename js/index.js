@@ -17,7 +17,7 @@ window.onload = (event) => {
   
   titlecard.addEventListener("click", (e) => {
     sceneDelegate.postMessage(null);
-    title.remove();
+    title.style.display = "none";
     titlecard.style.animationName = "viewport";
     titlecard.style.animationDuration = "3s";
     titlecard.style.animationFillMode = "both";
