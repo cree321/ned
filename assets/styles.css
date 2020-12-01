@@ -17,6 +17,7 @@
 .titlecard-preview-container {
   display: flex;
   justify-content: center;
+  pointer-events: none;
 }
 .titlecard-preview:hover {
   
