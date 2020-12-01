@@ -19,8 +19,8 @@
   justify-content: center;
   /*pointer-events: none;*/
 }
-.titlecard-preview:hover {
-  
+.titlecard:hover {
+  background-image: #0005;
 }
 .titlecard-title {
   
