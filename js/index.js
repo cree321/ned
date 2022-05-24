@@ -15,7 +15,7 @@ window.onload = (event) => {
   const camera = document.getElementById("camera");
   const escena = document.getElementById("escena");
   
-  function viewport.addEventListener("click", (e) => {
+  viewport.addEventListener("click", (e) => {
     sceneDelegate.postMessage(null);
     title.style.display = "none";
     titlecard.style.animationName = "viewport";
